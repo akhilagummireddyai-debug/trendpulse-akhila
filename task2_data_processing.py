@@ -11,3 +11,12 @@ print(f"Loaded {len(df)} stories from {latest_file}")
 print(f"After removing duplicates: {len(df)}")
 print(f"After removing nulls: {len(df)}")
 print(f"After removing low scores: {len(df)}")
+# Save cleaned data to CSV
+output_file = "data/trends_clean.csv"
+df.to_csv(output_file, index=False)
+
+print(f"\nSaved {len(df)} rows to {output_file}")
+
+# Print category summary
+print("\nStories per category:")
+print(df["category"].value_counts())
